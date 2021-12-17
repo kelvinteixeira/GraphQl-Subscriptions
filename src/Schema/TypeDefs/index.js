@@ -1,6 +1,9 @@
 const { gql } = require("apollo-server-express");
+const { queryTypeDefs } = require("./queries");
+const { mutationTypeDefs } = require("./mutations");
+const { subscriptionTypeDefs } = require("./subscriptions");
 
-const typeDefs = gql`
+const defaultTypeDefs = gql`
   type User {
     _id: ID! # ID para aplicar uma chave primaria
     name: String! #Aplicar ! faz com que esse atributo seja obrigatorio
@@ -14,20 +17,14 @@ const typeDefs = gql`
     content: String!
     author: User! # aninhamento de tipos
   }
-
-  type Query {
-    hello: String
-    users: [User!]! # essas ! para que não retorne um array com null
-    getUserByEmail(email: String!): User!
-  }
-
-  type Mutation {
-    createUser(name: String!, email: String!): User!
-  }
-
-  type Subscription {
-    userAdded: User!
-  }
 `;
+
+const typeDefs = [
+  defaultTypeDefs,
+  queryTypeDefs,
+  mutationTypeDefs,
+  subscriptionTypeDefs,
+];
+
 
 module.exports = { typeDefs };
