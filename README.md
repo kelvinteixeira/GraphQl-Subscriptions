@@ -36,7 +36,7 @@ $ yarn ( caso não utilize o yarn execute apenas npm -i)
 $ code .
 
 # Agore execute a aplicação.
-$ yarn start (caso não utilize o yarn: npm run start)
+$ yarn dev (caso não utilize o yarn: npm run dev)
 
 # A aplicação iniciará na porta 8000
 # No navegador digite: http://localhost:8000/graphql
