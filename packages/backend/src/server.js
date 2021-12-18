@@ -7,7 +7,6 @@ const httpServer = createServer(appExpress);
 
 createApolloServer(appExpress, httpServer);
 
-const PORT = 8000;
-httpServer.listen(PORT, () =>
-  console.log(`Server is now running on http://localhost:${PORT}/graphql`)
+httpServer.listen(process.env.PORT, () =>
+  console.log(`Server is now running on http://localhost:${process.env.PORT}/graphql`)
 );
