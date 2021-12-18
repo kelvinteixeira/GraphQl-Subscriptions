@@ -1,7 +1,10 @@
 const { ApolloServer } = require("apollo-server-express");
 const { schema } = require("../Schema");
 const { graphQLContext } = require("./graphQLContext");
-const { createSubscriptionServer } = require("./SubscriptionServer");
+const {
+  createSubscriptionServer,
+  destroySubscriptionServer,
+} = require("./SubscriptionServer");
 
 // No GraphQl toda request é POST
 //Toda request bate no mesmo endpoint que por convenção fica (/graphql)
@@ -19,17 +22,7 @@ async function createApolloServer(app, httpSv) {
   const instanceOfApolloServer = new ApolloServer({
     schema,
     context: graphQLContext(pubSub),
-    plugins: [
-      {
-        async serverWillStart() {
-          return {
-            async drainServer() {
-              subscriptionServer.close();
-            },
-          };
-        },
-      },
-    ],
+    plugins: [destroySubscriptionServer(subscriptionServer)],
   });
 
   await instanceOfApolloServer.start();

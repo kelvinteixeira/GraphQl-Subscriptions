@@ -15,7 +15,7 @@ mutation Mutation($name: String!, $email: String!) {
   }
 }
 
-{  "name": "userExamploe",
+{  "name": "userExample",
   "email": "u_example@email.com"
 }
 

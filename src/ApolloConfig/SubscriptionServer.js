@@ -21,4 +21,16 @@ function createSubscriptionServer(schema, server) {
   return { subscriptionServer, pubSub };
 }
 
-module.exports = { createSubscriptionServer };
+const destroySubscriptionServer = (subscriptionServer) => {
+  return {
+    async serverWillStart() {
+      return {
+        async drainServer() {
+          subscriptionServer.close();
+        },
+      };
+    },
+  };
+};
+
+module.exports = { createSubscriptionServer, destroySubscriptionServer };
