@@ -25,7 +25,7 @@ const CREATEUSER_MUTATION = gql`
 
 export function Subscriptions() {
   const { data, loading, error } = useSubscription(USERADDED_SUBSCRIPTION);
-  const [handleCreateUser, { data: mutationData, error: mutationError }] =
+  const [handleCreateUser, { error: mutationError }] =
     useMutation(CREATEUSER_MUTATION);
 
   if (error || mutationError) return <p>Erro :(</p>;
@@ -48,7 +48,10 @@ export function Subscriptions() {
       </div>
       {!loading && (
         <div>
-          <p>Toda vez que uma mutation é disparada é feita a publicação na subscription :)</p>
+          <p>
+            Toda vez que uma mutation é disparada é feita a publicação na
+            subscription :)
+          </p>
           <p>id:{data.userAdded._id}</p>
           <p>name: {data.userAdded.name}</p>
           <p>email: {data.userAdded.email}</p>
