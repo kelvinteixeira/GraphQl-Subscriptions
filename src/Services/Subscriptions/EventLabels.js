@@ -1,0 +1,3 @@
+const USER_ADDED_EVENT_LABEL = "USER_ADDED_EVENT_LABEL";
+
+module.exports = { USER_ADDED_EVENT_LABEL };
