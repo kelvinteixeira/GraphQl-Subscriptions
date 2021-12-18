@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev:backend": "yarn workspace @apollo-examples/backend dev",
-    "start:frontend": "yarn workspace @apollo-examples/frontend start"
+    "backend:dev": "yarn workspace @apollo-examples/backend dev",
+    "frontend:start": "yarn workspace @apollo-examples/frontend start"
   },
   "workspaces": {
     "packages": [
