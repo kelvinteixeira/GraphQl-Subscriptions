@@ -1,18 +1,22 @@
 <div align="center">
-  <img src="./cover.jpg" />
+  <img src="./cover1.jpg" />
+  <img src="./cover2.jpg" />
 </div>
 
 # <div align="center"> GraphQL Subscriptions </div>
 
 #### <div align="right">- Projeto Finalizado🟢 <div>
 
-### <div align="center"> Aplicação em javascript, abordando conceitos sobre: </div>
+### <div align="center"> Aplicação em javascript no backend e typescript no frontend, abordando conceitos sobre: </div>
 
+#### - Monorepo
 #### - GraphQL
+#### - React
 #### - Apollo Server Express
-#### - Query
-#### - Mutations
-#### - Subscriptions
+#### - Apollo Client
+#### - Query | useQuery | useLazyQuery
+#### - Mutations | useMutations
+#### - Subscriptions | useSubscriptions
 
 ## <div align="center"> Sumário </div>
 <!--ts-->
@@ -35,18 +39,25 @@ $ yarn ( caso não utilize o yarn execute apenas npm -i)
 # Depois de instalado todas as dependências, abra a aplicação via vscode
 $ code .
 
-# Agore execute a aplicação.
-$ yarn dev (caso não utilize o yarn: npm run dev)
+# Agore execute a aplicação do backend.
+$ yarn backend:dev (caso não utilize o yarn: npm run backend:dev)
 
 # A aplicação iniciará na porta 8000
 # No navegador digite: http://localhost:8000/graphql
-
 # Na pasta examples estão todos os códigos disponíveis para executar os serviços
+
+# Seguidamente execute a aplicação do frontend.
+$ yarn frontend:start (caso não utilize o yarn: npm run frontend:start)
+
+# A aplicação iniciará na porta 3000
+# No navegador caso não iniciar automaticamente, digite: http://localhost:3000
 ```
 
 ##  <div align="center">Tecnologias utilizadas</div>
 - [GraphQL](https://graphql.org/)
+- [Reactjs](https://reactjs.org/)
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+- [Apollo Client for React](https://www.apollographql.com/docs/react/)
 
 
 <div align="center">Desenvolvedores envolvidos:

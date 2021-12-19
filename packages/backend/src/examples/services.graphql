@@ -1,8 +1,10 @@
 """ Subscription example """
 subscription Subscription {
   userAdded {
+    _id
     name
     email
+    active
   }
 }
 
